@@ -156,3 +156,18 @@ nginx-ingress:
 #      requests:
 #        cpu: 10m
 #        memory: 20Mi
+
+metallb:
+  prometheus:
+    scrapeAnnotations: true
+
+  serviceAccounts:
+    controller:
+      create: false
+      name: default
+    speaker:
+      create: false
+      name: default
+
+  # configInline:
+  # defined in region secrets
